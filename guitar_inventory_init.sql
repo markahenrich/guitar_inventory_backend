@@ -30,3 +30,8 @@ INSERT INTO `guitar_model` (m_id, model_name, model_year, color, price) VALUES (
 INSERT INTO `guitar_model` (m_id, model_name, model_year, color, price) VALUES (2, 'Telecaster', 2020, 'Green', 1299.99); 
 INSERT INTO `guitar_model` (m_id, model_name, model_year, color, price) VALUES (3, 'Mockingbird', 2015, 'Black/Gold', 999.99); 
 
+CREATE VIEW `all_makes_and_models` AS
+SELECT m_name AS 'Make', model_name AS 'Model', model_year AS 'Year', color AS 'Color', price AS 'Price' 
+FROM `manufacturer` AS `m`
+JOIN `guitar_model` AS `g` ON `g`.m_id = `m`.m_id;
+
