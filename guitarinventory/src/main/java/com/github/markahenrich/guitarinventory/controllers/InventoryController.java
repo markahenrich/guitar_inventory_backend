@@ -26,10 +26,19 @@ public class InventoryController {
 
     @GetMapping("/manufacturers")
     public List<String> getAllManufacturers() {
-        String sql = "SELECT m_name FROM guitar_inventory.manufacturer";
+        String sql = "SELECT m_name FROM guitar_inventory.manufacturer;";
 
         return jdbcTemplate.query(sql, (rs, rowNum) -> {
            return rs.getString("m_name");
+        });
+    }
+
+    @GetMapping("/all")
+    public List<String> getAll() {
+        String sql = "SELECT Make, Model FROM guitar_inventory.all_makes_and_models";
+
+        return jdbcTemplate.query(sql, (rs, row) -> {
+            return rs.getString("Make") + " " + rs.getString("Model");
         });
     }
 }
