@@ -6,6 +6,7 @@ A RESTful API microservice for a theoretical guitar inventory system.
 - Spring Boot
 - SQL
 - MySQL
+- Docker
 
 ### How to Set Up
 1. Ensure you have MySQL installed and running. Can be downloaded here: https://dev.mysql.com/downloads/mysql/
@@ -13,9 +14,11 @@ A RESTful API microservice for a theoretical guitar inventory system.
 3. Navigate to guitarinventory/src/main/resources/application.properties and set the url, username, and password if different.
 
 # API
-Base URL: **/api/v1/**
+Base URL : **/api/v1/**
+
+**NOTE:** Still developing API. For now, simply returns arrays of strings. Will return JSON objects.
 
 ### GET
-- /guitars
-- /manufacturers
-- /all
+- **/guitars** : `["Les Paul", "Stratocaster" ... ]`
+- **/manufacturers** : `["Gibson", "Fender" ... ]`
+- **/all** : `["Gibson Les Paul", "Fender Stratocaster" ... ]`
